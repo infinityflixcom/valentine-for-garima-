@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,7 +97,7 @@ button{
 }
 .photos img:hover{transform:scale(1.07)}
 
-/* special message section */
+/* special message */
 .special{
   margin-top:60px;
   padding:45px 30px;
@@ -106,21 +105,37 @@ button{
   background:linear-gradient(135deg,#ffe3ef,#fff8fb);
   box-shadow:0 20px 45px rgba(0,0,0,.15);
 }
-
 .special h2{
   font-family:'Great Vibes',cursive;
   font-size:2.6rem;
   color:#e63946;
   margin-bottom:25px;
 }
-
 #specialText{
   font-size:1.05rem;
   font-style:italic;
   min-height:260px;
 }
 
-/* footer */
+/* last emotional note */
+.last-note{
+  margin-top:50px;
+  padding:28px 24px;
+  border-radius:22px;
+  background:rgba(255,255,255,0.85);
+  font-size:0.95rem;
+  line-height:1.8;
+  color:#444;
+  box-shadow:0 15px 35px rgba(0,0,0,.12);
+  opacity:0;
+  animation:fadeUp 2.5s ease forwards;
+  animation-delay:3s;
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(25px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
 footer{
   margin-top:45px;
   font-family:'Playfair Display',serif;
@@ -147,10 +162,7 @@ setInterval(()=>{
 
 <!-- PAGE 1 -->
 <div class="card" id="page1">
-  <h1>
-    Will you be my Valentine,<br>
-    Miss Wonder Woman? 💘
-  </h1>
+  <h1>Will you be my Valentine,<br>Miss Wonder Woman? 💘</h1>
   <div class="buttons">
     <button id="yesBtn" onclick="openSurprise()">Yes 💕</button>
     <button id="noBtn" onclick="growYes()">No 🙈</button>
@@ -175,22 +187,29 @@ setInterval(()=>{
     <img src="garima4.jpeg">
   </div>
 
-  <!-- SPECIAL MESSAGE -->
   <div class="special">
     <h2>A Special Message For You</h2>
     <p id="specialText"></p>
   </div>
 
+  <div class="last-note">
+    Mujhe pata hai hum dono ka shayad kuch nahi ho sakta.  
+    Hum dono bilkul different hain,  
+    aur galti bhi shayad meri hi thi.  
+    Main thoda zyada close aa gaya,  
+    aur shayad mujhe tumse confess nahi karna chahiye tha.
+    <br><br>
+  </div>
+
   <footer>
-    Always choosing you,<br>
+    With love, respect & honesty,<br>
     <strong>Aman ❤️</strong>
   </footer>
 </div>
 
-<audio id="song" src="ek-ladki-ko-dekha.mp3" loop></audio>
+<audio id="song" src="ek-ladki-ko-dekha.mp3" loop autoplay></audio>
 
 <script>
-/* try autoplay on load */
 window.addEventListener("load",()=>{
   document.getElementById("song").play().catch(()=>{});
 });
@@ -220,16 +239,19 @@ function typeTitle(){
   }
 }
 
-/* SPECIAL MESSAGE TYPING */
-let message=`My Love,
+/* special message typing */
+let message=`Meri Wonder Woman ❤️,
 
-Jab se tum meri zindagi mein aayi ho, sab kuch alag sa ho gaya hai. Pehle jo din bas guzar jaate the, ab unmein tumhari yaadein basi hoti hain. Tumhari ek muskurahat mere saare gham chura leti hai, aur tumhari ek baat mera din bana deti hai.
+Main zyada bolne wala ladka nahi hoon. Tum jaanti ho, main introvert hoon… apni feelings bolna mere liye sabse mushkil kaam hota hai. Par agar main yeh likh raha hoon, toh samajh lena tum mere liye kitni special ho.
 
-Mujhe nahi pata main tumse itna pyaar kab karne laga, par ab itna zaroor jaanta hoon ki tumhare bina sab adhoora lagta hai. Tum meri aadat nahi, meri zarurat ban chuki ho. Tumhara saath, tumhari baatein, tumhara gussa bhi mujhe pyaara lagta hai.
+Tumhe maine pyaar se Wonder Woman bola tha na? Sach mein ho tum. Strong bhi, cute bhi, thodi ziddi bhi — bilkul ek perfect Capricorn 😌
+Aur shayad isi liye hum dono ka itna ladna hota hai. Kabhi tum jeet jaati ho, kabhi main… par sach yeh hai ki har ladai ke baad tumse aur zyada pyaar ho jaata hai.
 
-Main wada karta hoon ki har mushkil mein tumhara haath pakad kar khada rahunga. Tum hanso ya ro, jeeto ya thako — main hamesha tumhare saath rahunga. Tum meri zindagi ka sabse khoobsurat hissa ho.
+Tum mujhe gussa bhi dilati ho, par tumhari ek smile mein saara gussa pighal jaata hai. Tum meri life ka woh hissa ho jiske bina sab boring lagta hai. Tumhari care, tumhari baatein, aur haan… tumhari daant bhi 🫣
 
-I love you more than words can ever explain.`;
+Main perfect nahi hoon, par jitna bhi hoon, sirf tumhara hoon. Shayad main roz “I love you” na bol paun, par dil se har din sirf tumhe hi chunta hoon.
+
+Apni Wonder Woman ko bas itna kehna tha —.`;
 
 let j=0;
 function typeSpecial(){
